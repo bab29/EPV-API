@@ -1,0 +1,18 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        0.061 [PSMRecordingList]::PSMRecordings[0]
+   2        0.017 [PSMRecordingList]::PSMRecordings[0..10].RecordingGiles
+   3        0.013 [PSMRecordingList]::PSMRecordings[0..10].RecordedActivities
+   4        0.011 [PSMRecordingList]::PSMRecordings[0..30].RecordedActivities
+   5        0.020 [PSMRecordingList]::PSMRecordings.RecordedActivities
+   6        0.481 [PSMRecordingList]::PSMRecordings
+   7        0.590 [PSMRecordingList]::PSMRecordings.RecordingFiles
+   8        0.041 [PSMRecordingList]::PSMRecordings[0].RecordingFiles
+   9        0.368 [PSMRecordingList]::PSMRecordings.RecordingFiles
+  10        0.016 [PSMRecordingList]::PSMRecordings.RecordingFiles |Select-Object -Property Format -Unique
+
+([PASObject]::InvokeGet("https://pvwa.lab.local/PasswordVault/API/Recordings/31_176/activities")).Activities |Ft
+([PASObject]::InvokeGet("https://pvwa.lab.local/PasswordVault/API/Recordings/31_141/activities")).Activities
+([PASObject]::InvokeGet("https://pvwa.lab.local/PasswordVault/API/Recordings/31_138/activities")).Activities
+([PASObject]::InvokeGet("https://pvwa.lab.local/PasswordVault/API/Recordings/31_12/activities")).Activities |Ft
